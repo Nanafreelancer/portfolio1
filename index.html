@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
 <div class="book-container">
 
 <img src="images/decorative-line.png" alt="Decorative Line" class="decorative-line">
@@ -73,17 +79,18 @@
          </div> <!-- Đã thêm thẻ đóng hero-card -->
       </section>             
 
-      <!-- work section -->
+      <!-- 1.work section -->
       <section id="works" class="works">
         <h2 class="section-heading">1. 作ったもの</h2>
         <div class="works-grid">
+         
             <!-- works1 -->
              <article class="work-item">
                <div class="work-img-wrapper">
                 <img src="images/shashin1.jpg" alt="Web Development Project" class="work-image">
                </div>
                 <h3 class="work-title">デモプロジェクト1</h3>
-                <p class="work-category">Web Development1</p>
+                <span class="work-badge">サイト</span>
              </article>
             <!-- works2 -->
              <article class="work-item">
@@ -91,7 +98,7 @@
                 <img src="images/shashin2.jpg" alt="Landing Page Project" class="work-image">
                </div>
                 <h3 class="work-title">デモプロジェクト2</h3>
-                <p class="work-category">LP</p>
+                <span class="work-badge">サイト</span>
              </article>
             <!-- works3 -->
              <article class="work-item">
@@ -99,7 +106,7 @@
                 <img src="images/shashin3.jpg" alt="Banner Design" class="work-image">
                </div>
                 <h3 class="work-title">デモプロジェクト3</h3>
-                <p class="work-category">banner</p>
+                <span class="work-badge">バナ</span>
              </article>
             <!-- works4 -->
              <article class="work-item">
@@ -107,9 +114,16 @@
                 <img src="images/shashin4.jpg" alt="UI/UX Design" class="work-image">
                </div>
                 <h3 class="work-title">デモプロジェクト4</h3>
-                <p class="work-category">UI/UX</p>
+                <span class="work-badge">バナ</span>
              </article>
         </div>
+      <!-- Thêm nút的作品一覧へ và số trang - 1 - -->
+  <div class="section-footer">
+    <div class="studio-btn-wrapper">
+      <a href="#" class="studio-btn">作品一覧へ <span>→</span></a>
+    </div>
+    <div class="page-number">− 1 −</div>
+  </div>
        </section>
 
        <!-- about me -->
@@ -125,12 +139,18 @@
                      <span>HTML/CSS</span>
                      <span>JavaScript</span>
                      <span>Photoshop</span>
+                     <span>Illuslator</span>
                   </div>
                </div>
             </div>
-            <div class="more-btn-container">
-               <a href="#" class="studio-btn">プロフィールを見る →</a>
-            </div>
+
+            <!-- Thêm nút的作品一覧へ và số trang - 1 - -->
+  <div class="section-footer">
+    <div class="studio-btn-wrapper">
+      <a href="#" class="studio-btn">プロフィールを見る <span>→</span></a>
+    </div>
+    <div class="page-number">− 2 −</div>
+  </div>
         </section>
 
         <!-- contact -->
@@ -146,6 +166,25 @@
         </footer>
 </main>
 </div>
+<div class="mobile-nav-overlay" id="navOverlay">
+  <button class="close-menu-btn" id="menuClose">&times;</button>
+  <div class="overlay-content">
+    <div class="overlay-vertical-name">Kanna Miyasato</div>
+    <div class="overlay-toc">
+      <h2>目次</h2>
+      <ul class="overlay-links">
+        <li><a href="#works" class="overlay-link">1. 作ったもの</a></li>
+        <li><a href="#about" class="overlay-link">2. プロフィール</a></li>
+        <li><a href="#contact" class="overlay-link">3. お問い合わせ</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<a href="#" class="back-to-top" id="backToTop">
+  <span class="arrow">«</span>
+  <span class="txt">TOP</span>
+</a>
 
 <!-- script -->
 <script src="script.js"></script>

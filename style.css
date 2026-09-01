@@ -112,11 +112,13 @@ a {
 .nav-links a {
   color: #455660;
   font-size: 1rem;
-  transition: opacity 0.3s ease;
+  display: inline-block; /* Giúp thẻ link áp dụng được hiệu ứng phóng to */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-  opacity: 0.6;
+  transform: scale(1.08); /* Phóng to 8% khi rê chuột */
+  color: #111;            /* Đậm màu chữ lên một chút cho rõ */
 }
 
 .sidebar-bottom {
@@ -300,6 +302,16 @@ a {
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem 2rem;
 }
+/* Khung của từng bài viết - Thêm transition để toàn bộ khung phóng to mượt */
+.work-item {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Khi rê chuột vào work-item, phóng to TOÀN BỘ khung (Ảnh + Chữ) */
+.work-item:hover {
+  transform: scale(1.05); /* Phóng to 5% toàn bộ khối work-item */
+}
 
 .work-img-wrapper {
   overflow: hidden;
@@ -312,11 +324,6 @@ a {
   aspect-ratio: 16/10;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.work-item:hover .work-image {
-  transform: scale(1.04);
 }
 
 .work-title {
@@ -327,6 +334,19 @@ a {
 .work-category {
   font-size: 0.85rem;
   color: #455660;
+}
+
+/* Thiết kế nhãn badge bo tròn hình viên thuốc (Pill shape) */
+.work-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background-color: #455660; /* Màu nền xám đen chuẩn theo theme */
+  color: #ffffff;            /* Chữ màu trắng */
+  font-size: 0.75rem;        /* Cỡ chữ nhỏ gọn */
+  padding: 0.25rem 1rem;     /* Khoảng đệm xung quanh chữ */
+  border-radius: 50px;       /* Bo tròn xịn hình capsule */
+  letter-spacing: 0.05em;
+  font-weight: 400;
 }
 
 /* About Section */
@@ -369,25 +389,6 @@ a {
   margin-right: 4px;
 }
 
-.more-btn-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1.5rem;
-}
-
-.studio-btn {
-  background: #e8e3d8ff;
-  padding: 0.6rem 1.4rem;
-  color: #333;
-  font-size: 0.85rem;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.studio-btn:hover {
-  background: #dcd5c8;
-}
-
 /* Contact Footer */
 .footer-contact {
   border-top: 2px solid #455660ff;
@@ -422,6 +423,15 @@ a {
   padding: 0.6rem 1.5rem;
   border-radius: 20px;
   font-size: 0.9rem;
+}
+
+.work-category-btn, .email-btn {
+  display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.work-category-btn:hover, .email-btn:hover {
+  transform: scale(1.08); /* Phóng to 8% khi rê chuột */
 }
 
 /* ==========================================
@@ -461,4 +471,257 @@ a {
   .works-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE CONFIGURATION (Màn hình < 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  
+  /* Reset bố cục sách 2 cột thành 1 cột */
+  body {
+    padding: 0.8rem 0.5rem;
+  }
+
+  .book-container {
+    flex-direction: column;
+    box-shadow: none;
+    gap: 0;
+  }
+
+  /* Ẩn cột trái tĩnh trên desktop & đường gáy sách */
+  .sidebar-left, 
+  .decorative-line {
+    display: none !important;
+  }
+
+  /* Cột nội dung chính chiếm full chiều rộng */
+  .main-content {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* --- 1. NÚT HAMBURGER (3 gạch) --- */
+  .mobile-menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .mobile-menu-btn .bar {
+    width: 22px;
+    height: 2px;
+    background-color: #455660;
+    transition: all 0.3s ease;
+  }
+
+  /* --- 2. MENU OVERLAY TOÀN MÀN HÌNH --- */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0ece3;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #455660;
+    cursor: pointer;
+  }
+
+  .overlay-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .overlay-vertical-name {
+    writing-mode: vertical-rl;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: #455660;
+  }
+
+  .overlay-toc h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #455660;
+  }
+
+  .overlay-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .overlay-links a {
+    font-size: 1.1rem;
+    color: #455660;
+  }
+
+  /* --- 3. TỐI ƯU CÁC PHẦN NỘI DUNG MÀN HÌNH NHỎ --- */
+  .hero-card {
+    min-height: 50vh;
+    padding: 3rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  /* Bố cục danh sách dự án thành 2 cột nhỏ trên mobile */
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 0.8rem;
+  }
+
+  .work-title {
+    font-size: 0.85rem;
+  }
+
+  /* --- 4. NÚT TOP (NÚT NỔI CAM BÊN PHẢI) --- */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    width: 48px;
+    height: 60px;
+    background-color: #c46238; /* Màu cam gạch */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 900;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .back-to-top .arrow {
+    transform: rotate(90deg);
+    font-size: 1rem;
+    margin-bottom: -2px;
+  }
+}
+
+/* Mặc định ẩn nút Hamburger & Overlay trên máy tính */
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .mobile-nav-overlay,
+  .back-to-top {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   BUTTON & PAGE NUMBER STYLES
+   ========================================== */
+
+/* Khung chứa ở cuối mỗi section */
+.section-footer {
+  position: relative;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Khung chứa nút căn sát lề phải */
+.studio-btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2.5rem;
+  /* Cho phép thẻ con tràn ra ngoài lề trang sách một chút */
+  overflow: visible; 
+}
+
+/* Thân nút chính (Màu xám nhạt) */
+.studio-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #f2efea; /* Màu xám kem nhạt */
+  color: #2b2b2b;
+  padding: 0.8rem 2.5rem;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  
+  /* Lùi nút về bên trái một khoảng bằng độ rộng của thẻ màu cam chìa ra */
+  margin-right: 24px; 
+  
+  /* Tạo bóng đổ mềm ở phía dưới nút xám */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  
+  /* Cấu hình chuyển động mượt cho hiệu ứng rê chuột */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s ease, 
+              background-color 0.3s ease;
+}
+
+/* Thẻ tab màu cam nhô ra ở mép bên phải */
+.studio-btn::after {
+  content: "";
+  position: absolute;
+  right: -24px; /* Đẩy hẳn sang bên phải nút xám 24px */
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background-color: #c46238; /* Màu cam gạch chuẩn */
+  
+  /* Tạo bóng đổ cho thẻ màu cam chìa ra ngoài */
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hiệu ứng rê chuột (Hover) - Nổi lên và bóng đổ đậm hơn */
+.studio-btn:hover {
+  background-color: #e8e4dc;
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+/* Số trang (- 1 -, - 2 -) căn giữa */
+.page-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #555555;
+  letter-spacing: 0.2em;
+  text-align: center;
 }
