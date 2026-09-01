@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITO.TRANG｜Portfolio</title>
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="book-container">
+
+<img src="images/decorative-line.png" alt="Decorative Line" class="decorative-line">
+
+<!-- CỘT TRÁI (Sticky Sidebar - Mục lục) -->
+<aside class="sidebar-left">
+  <div class="sidebar-sticky-inner">
+      <div class="sidebar-top">
+         <div class="vertical-name">ITO.TRANG</div>
+         <div class="toc-wrapper">
+           <h2 class="toc-title">目次</h2>
+           <nav class="nav-links">
+              <a href="#works">1. 作ったもの</a>
+              <a href="#about">2. プロフィール</a>
+              <a href="#contact">3. お問い合わせ</a>
+           </nav>
+         </div>
+      </div>
+
+      <div class="sidebar-bottom">
+         <p class="colophon-title">ITO.TRANG portfolio</p>
+         <ul class="colophon-list">
+            <li><span>目次</span>［作ったもの］［プロフィール］</li>
+            <li><span>著者</span>伊藤チャン</li>
+            <li><span>発行日</span>2026年</li>
+         </ul>
+         <p class="copyright">&copy; 2026 ITO.TRANG All rights reserved</p>
+      </div>
+  </div>
+</aside>
+
+<!-- CỘT PHẢI (Nội dung chính cuộn dọc) -->
+<main class="main-content">
+      <section class="hero">
+         <div class="hero-card">
+            <h1 class="hero-title">Portfolio</h1>
+            <p class="hero-subtitle">ITO.TRANG</p>
+
+            <!-- Cụm Badge SCROLL DOWN & Mũi tên -->
+            <div class="scroll-badge-wrapper">
+                <div class="scroll-rotate-badge">
+                    <!-- SVG Đường tròn chữ xoay -->
+                    <svg viewBox="0 0 100 100" class="rotate-text">
+                        <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                        <text font-size="20" fill="#a86e59" letter-spacing="2.5" font-family="'Cormorant Garamond', serif">
+                            <textPath href="#circlePath">SCROLL DOWN  SCROLL DOWN </textPath>
+                        </text>
+                    </svg>
+
+                    <!-- Mũi tên chỉ xuống ở tâm -->
+                    <div class="center-arrow">
+                        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="#a86e59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="8" y1="2" x2="8" y2="22"></line>
+                            <polyline points="2 16 8 22 14 16"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Dòng chữ phụ phía dưới -->
+                <p class="thank-you-text">Thank you for visiting</p>
+            </div>
+         </div> <!-- Đã thêm thẻ đóng hero-card -->
+      </section>             
+
+      <!-- work section -->
+      <section id="works" class="works">
+        <h2 class="section-heading">1. 作ったもの</h2>
+        <div class="works-grid">
+            <!-- works1 -->
+             <article class="work-item">
+               <div class="work-img-wrapper">
+                <img src="images/shashin1.jpg" alt="Web Development Project" class="work-image">
+               </div>
+                <h3 class="work-title">デモプロジェクト1</h3>
+                <p class="work-category">Web Development1</p>
+             </article>
+            <!-- works2 -->
+             <article class="work-item">
+               <div class="work-img-wrapper">
+                <img src="images/shashin2.jpg" alt="Landing Page Project" class="work-image">
+               </div>
+                <h3 class="work-title">デモプロジェクト2</h3>
+                <p class="work-category">LP</p>
+             </article>
+            <!-- works3 -->
+             <article class="work-item">
+               <div class="work-img-wrapper">
+                <img src="images/shashin3.jpg" alt="Banner Design" class="work-image">
+               </div>
+                <h3 class="work-title">デモプロジェクト3</h3>
+                <p class="work-category">banner</p>
+             </article>
+            <!-- works4 -->
+             <article class="work-item">
+               <div class="work-img-wrapper">
+                <img src="images/shashin4.jpg" alt="UI/UX Design" class="work-image">
+               </div>
+                <h3 class="work-title">デモプロジェクト4</h3>
+                <p class="work-category">UI/UX</p>
+             </article>
+        </div>
+       </section>
+
+       <!-- about me -->
+        <section id="about" class="about">
+            <h2 class="section-heading">2. プロフィール</h2>
+            <div class="profile-card">
+               <img src="images/avatar.jpeg" alt="avatar" class="profile-avatar">
+               <div class="profile-info">
+                  <h3>ITO CHAN</h3>
+                  <p class="about-text">こんにちは。初めまして伊藤チャンです。</p>
+                  <div class="skills">
+                     <strong>スキル：</strong>
+                     <span>HTML/CSS</span>
+                     <span>JavaScript</span>
+                     <span>Photoshop</span>
+                  </div>
+               </div>
+            </div>
+            <div class="more-btn-container">
+               <a href="#" class="studio-btn">プロフィールを見る →</a>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <footer id="contact" class="footer-contact">
+         <h2 class="section-heading">3. お問い合わせ</h2>
+         <div class="contact-box">
+            <img src="images/contact.webp" alt="CONTACT" class="contact-bg-img">
+            <div class="contact-content">
+              <p>下記アドレスへメールにてご連絡ください。</p>
+              <a href="mailto:your-email@gmail.com" class="email-btn">your-email@gmail.com</a> 
+            </div>
+         </div>
+        </footer>
+</main>
+</div>
+
+<!-- script -->
+<script src="script.js"></script>
+</body>
+</html>

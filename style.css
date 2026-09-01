@@ -1,0 +1,464 @@
+/* ==========================================
+   1. RESET & FONT CONFIGURATION
+   ========================================== */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Shippori Mincho', 'Cormorant Garamond', serif;
+  background-color: #455660; /* Màu nền xám bên ngoài trang sách */
+  color: #455660;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================
+   2. BOOK CONTAINER (Khung sách 2 cột)
+   ========================================== */
+.book-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 90vh;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background-color: transparent; /* Để lộ nền tối bên dưới ở khe gáy */
+  gap: 6px; /* Khoảng hở nhỏ giữa 2 trang sách */
+}
+
+/* Sợi chỉ trang trí ở gáy sách */
+.decorative-line {
+  position: absolute;
+  top: 0;
+  left: 32%; /* Căn đúng đường ranh giới 32% */
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100%;
+  object-fit: fill;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* ==========================================
+   3. CỘT TRÁI (Sticky Sidebar - Mục lục)
+   ========================================== */
+.sidebar-left {
+  width: 32%;
+  min-width: 280px;
+  background-color: #f0ece3;
+  border-right: 2px solid #5a6572; /* Gáy sách */
+
+  /* Bo góc đỉnh và đáy bên phải (phần tiếp giáp gáy sách) */
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  /* Bóng đổ nhẹ viền gáy */
+  box-shadow: inset -10px 0 15px -5px rgba(0, 0, 0, 0.50), 
+              5px 0 15px rgba(0, 0, 0, 0.15);
+}
+/* Khung nội dung bên trong cột trái (Găm chặt & đi theo màn hình) */
+.sidebar-sticky-inner {
+ position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto; 
+}
+
+.sidebar-top {
+  display: flex;
+  gap: 2rem;
+}
+
+.vertical-name {
+  writing-mode: vertical-rl;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: #455660;
+}
+
+.toc-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #455660;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+.sidebar-bottom {
+  font-size: 0.8rem;
+  color: #455660;
+  border-top: 2px solid #455660ff;
+  padding-top: 1rem;
+}
+
+.colophon-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.colophon-list {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.colophon-list li {
+  margin-bottom: 0.2rem;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* ==========================================
+   4. CỘT PHẢI (Main Content)
+   ========================================== */
+.main-content {
+  width: 68%;
+  padding: 3rem 4rem;
+  background-color: #faf8f5;
+
+  /* Bo góc đỉnh và đáy bên trái (phần tiếp giáp gáy sách) */
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  /* Bóng đổ nhẹ viền gáy */
+  box-shadow: inset 10px 0 15px -5px rgba(0, 0, 0, 0.50), 
+              -5px 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Section & Frame Card */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 90%;
+  min-height: 60vh;
+  padding: 6rem 2rem 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+
+  /* Đường viền ngoài */
+  border: 4px solid #455660; 
+  margin: 16px;
+}
+
+/* Đường viền trong (Double Border) */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 10px;
+  right: 10px;
+  border-left: 2px solid #455660;
+  border-right: 2px solid #455660; 
+  pointer-events: none;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -10px;
+  right: -10px;
+  border-top: 1px solid #455660;
+  border-bottom: 1px solid #455660;
+  pointer-events: none; 
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  color: #455660;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+
+/* Khung chứa tổng thể cụm Scroll Badge */
+.scroll-badge-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* Circle Scroll Badge */
+.scroll-rotate-badge {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hiệu ứng xoay tròn tự động cho chữ */
+.rotate-text {
+  width: 100%;
+  height: 100%;
+  animation: spinCircle 14s linear infinite;
+}
+
+/* Mũi tên nằm cố định ở tâm vòng tròn */
+.center-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dòng chữ Thank you for visiting bên dưới */
+.thank-you-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: #455660;
+  letter-spacing: 0.05em;
+}
+
+/* Keyframe xoay 360 độ */
+@keyframes spinCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 4rem 0 2rem 0;
+  color: #455660;
+}
+
+/* Works Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.work-img-wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+}
+
+.work-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-item:hover .work-image {
+  transform: scale(1.04);
+}
+
+.work-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.work-category {
+  font-size: 0.85rem;
+  color: #455660;
+}
+
+/* About Section */
+.about {
+  border-top: 2px solid #455660ff;
+  margin-top: 4rem;
+}
+
+.profile-card {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-text {
+  font-size: 0.95rem;
+  color: #455660;
+  margin-bottom: 0.8rem;
+}
+
+.skills span {
+  display: inline-block;
+  background: #e8e3d8ff;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.more-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.studio-btn {
+  background: #e8e3d8ff;
+  padding: 0.6rem 1.4rem;
+  color: #333;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.studio-btn:hover {
+  background: #dcd5c8;
+}
+
+/* Contact Footer */
+.footer-contact {
+  border-top: 2px solid #455660ff;
+  margin-top: 4rem;
+}
+
+.contact-box {
+  position: relative;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.contact-bg-img {
+  width: 100%;
+  max-width: 400px;
+  opacity: 0.7;
+}
+
+.contact-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.email-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #455660;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   5. SCROLL ANIMATION & RESPONSIVE
+   ========================================== */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .book-container {
+    flex-direction: column;
+  }
+  .sidebar-left,
+  .main-content {
+    width: 100%;
+    min-width: 100%;
+    box-shadow: none;
+  }
+  .sidebar-left {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #5a6572;
+    border-radius: 4px;
+  }
+  .decorative-line {
+    display: none;
+  }
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+}
