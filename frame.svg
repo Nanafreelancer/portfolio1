@@ -1,0 +1,23 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+ <!-- 1. Đường viền ngoài chính (nét đậm) -->
+
+ <!-- 2. Đường viền trong (nét mảnh hơn, thụt vào) -->
+ <!-- 3. Các nét vuông đan góc hướng vào trong đúng bản mẫu -->
+ <!-- Góc trên - trái -->
+ <!-- Góc trên - phải -->
+ <!-- Góc dưới - trái -->
+ <!-- Góc dưới - phải -->
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" stroke-width="2.5" stroke="#455660" fill="none" height="484" width="484" y="8.66667" x="6.74999"/>
+  <path stroke="#455660" id="svg_3" stroke-width="2.5" fill="none" d="m5.16667,23.5l17.33333,0l0,-16.33333"/>
+  <path stroke="#455660" id="svg_4" stroke-width="2.5" fill="none" d="m490,24l-14,0l0,-16"/>
+  <path stroke="#455660" id="svg_5" stroke-width="2.5" fill="none" d="m6,478l18,0l0,14"/>
+  <path stroke="#455660" id="svg_6" stroke-width="2.5" fill="none" d="m491.33333,480l-16,0l0,12"/>
+  <rect stroke-opacity="0" stroke="#faf8f5" id="svg_7" height="29.33333" width="28.66666" y="478.8" x="-5.73334" stroke-width="2.5" fill="#faf8f5"/>
+  <rect stroke-opacity="0" stroke="#faf8f5" id="svg_8" height="34.66667" width="44" y="480.79999" x="475.6" stroke-width="2.5" fill="#faf8f5"/>
+  <rect stroke-opacity="0" stroke="#faf8f5" id="svg_9" height="29.99999" width="38.66667" y="-8.2" x="-16.4" stroke-width="2.5" fill="#faf8f5"/>
+  <rect stroke-opacity="0" stroke="#faf8f5" id="svg_10" height="22.66667" width="30" y="0.8" x="476.93332" stroke-width="2.5" fill="#faf8f5"/>
+  <rect stroke="#455660" id="svg_11" height="471.99998" width="470.66666" y="16.09523" x="13.23797" stroke-width="1.5" fill="none"/>
+ </g>
+</svg>

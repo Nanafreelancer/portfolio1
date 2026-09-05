@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
-  <span class="bar"></span>
-  <span class="bar"></span>
-  <span class="bar"></span>
-</button>
 
 <div class="book-container">
 
@@ -37,7 +32,10 @@
       <div class="sidebar-bottom">
          <p class="colophon-title">ITO.TRANG portfolio</p>
          <ul class="colophon-list">
-            <li><span>目次</span>［作ったもの］［プロフィール］</li>
+            <li><span>目次</span></li>
+            <li><span>［作ったもの］</span></li>
+            <li><span>［プロフィール］</span></li>
+            <li><span>［お問い合わせ］</span></li>
             <li><span>著者</span>伊藤チャン</li>
             <li><span>発行日</span>2026年</li>
          </ul>
@@ -49,7 +47,14 @@
 <!-- CỘT PHẢI (Nội dung chính cuộn dọc) -->
 <main class="main-content">
       <section class="hero">
-         <div class="hero-card">
+         <div class="hero-card hero-frame">
+            <!-- ĐÃ CHUYỂN HAMBURGER MENU VÀO ĐÂY ĐỂ NẰM TRONG KHUNG SVG -->
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
             <h1 class="hero-title">Portfolio</h1>
             <p class="hero-subtitle">ITO.TRANG</p>
 
@@ -60,7 +65,7 @@
                     <svg viewBox="0 0 100 100" class="rotate-text">
                         <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
                         <text font-size="20" fill="#a86e59" letter-spacing="2.5" font-family="'Cormorant Garamond', serif">
-                            <textPath href="#circlePath">SCROLL DOWN  SCROLL DOWN </textPath>
+                            <textPath href="#circlePath">SCROLL DOWN  SCROLL DOWN  </textPath>
                         </text>
                     </svg>
 
@@ -74,9 +79,9 @@
                 </div>
 
                 <!-- Dòng chữ phụ phía dưới -->
-                <p class="thank-you-text">Thank you for visiting</p>
+                <p class="thank-you-text"><b>Thank you for visiting</b></p>
             </div>
-         </div> <!-- Đã thêm thẻ đóng hero-card -->
+         </div>
       </section>             
 
       <!-- 1.work section -->
@@ -87,7 +92,7 @@
             <!-- works1 -->
              <article class="work-item">
                <div class="work-img-wrapper">
-                <img src="images/shashin1.jpg" alt="Web Development Project" class="work-image">
+                <img src="images/banner1.jpg" alt="Web Development Project" class="work-image">
                </div>
                 <h3 class="work-title">デモプロジェクト1</h3>
                 <span class="work-badge">サイト</span>
@@ -95,7 +100,7 @@
             <!-- works2 -->
              <article class="work-item">
                <div class="work-img-wrapper">
-                <img src="images/shashin2.jpg" alt="Landing Page Project" class="work-image">
+                <img src="images/banner1.jpg" alt="Landing Page Project" class="work-image">
                </div>
                 <h3 class="work-title">デモプロジェクト2</h3>
                 <span class="work-badge">サイト</span>
@@ -103,27 +108,27 @@
             <!-- works3 -->
              <article class="work-item">
                <div class="work-img-wrapper">
-                <img src="images/shashin3.jpg" alt="Banner Design" class="work-image">
+                <img src="images/banner1.jpg" alt="Banner Design" class="work-image">
                </div>
-                <h3 class="work-title">デモプロジェクト3</h3>
-                <span class="work-badge">バナ</span>
+                <h3 class="work-title">クリアランスセールバナー</h3>
+                <span class="work-badge">バナー</span>
              </article>
             <!-- works4 -->
              <article class="work-item">
                <div class="work-img-wrapper">
-                <img src="images/shashin4.jpg" alt="UI/UX Design" class="work-image">
+                <img src="images/banner2.jpg" alt="Banner Design" class="work-image">
                </div>
-                <h3 class="work-title">デモプロジェクト4</h3>
-                <span class="work-badge">バナ</span>
+                <h3 class="work-title">ブランド紹介バナー</h3>
+                <span class="work-badge">バナー</span>
              </article>
         </div>
-      <!-- Thêm nút的作品一覧へ và số trang - 1 - -->
-  <div class="section-footer">
-    <div class="studio-btn-wrapper">
-      <a href="#" class="studio-btn">作品一覧へ <span>→</span></a>
-    </div>
-    <div class="page-number">− 1 −</div>
-  </div>
+
+        <div class="section-footer">
+          <div class="studio-btn-wrapper">
+            <a href="#" class="studio-btn">作品一覧へ <span>→</span></a>
+          </div>
+          <div class="page-number">− 1 −</div>
+        </div>
        </section>
 
        <!-- about me -->
@@ -139,18 +144,17 @@
                      <span>HTML/CSS</span>
                      <span>JavaScript</span>
                      <span>Photoshop</span>
-                     <span>Illuslator</span>
+                     <span>Illustrator</span>
                   </div>
                </div>
             </div>
 
-            <!-- Thêm nút的作品一覧へ và số trang - 1 - -->
-  <div class="section-footer">
-    <div class="studio-btn-wrapper">
-      <a href="#" class="studio-btn">プロフィールを見る <span>→</span></a>
-    </div>
-    <div class="page-number">− 2 −</div>
-  </div>
+            <div class="section-footer">
+              <div class="studio-btn-wrapper">
+                <a href="#" class="studio-btn">プロフィールを見る <span>→</span></a>
+              </div>
+              <div class="page-number">− 2 −</div>
+            </div>
         </section>
 
         <!-- contact -->
@@ -166,10 +170,12 @@
         </footer>
 </main>
 </div>
+
+<!-- Mobile Navigation Overlay -->
 <div class="mobile-nav-overlay" id="navOverlay">
   <button class="close-menu-btn" id="menuClose">&times;</button>
   <div class="overlay-content">
-    <div class="overlay-vertical-name">Kanna Miyasato</div>
+    <div class="overlay-vertical-name">ITO TRANG</div>
     <div class="overlay-toc">
       <h2>目次</h2>
       <ul class="overlay-links">
@@ -186,7 +192,6 @@
   <span class="txt">TOP</span>
 </a>
 
-<!-- script -->
 <script src="script.js"></script>
 </body>
 </html>
