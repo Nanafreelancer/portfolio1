@@ -343,6 +343,8 @@ a {
   font-size: 0.95rem;
   color: #455660;
   margin-bottom: 0.8rem;
+  white-space: nowrap;
+
 }
 
 .skills span {
