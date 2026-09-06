@@ -343,7 +343,6 @@ a {
   font-size: 0.95rem;
   color: #455660;
   margin-bottom: 0.8rem;
-  white-space: nowrap;
 
 }
 
@@ -379,6 +378,14 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+}
+
+.contact-text {
+  font-size: 0.95rem;
+  color: #455660;
+  margin-bottom: 0.8rem;
+  white-space: nowrap;
+
 }
 
 .email-btn {
