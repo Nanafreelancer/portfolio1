@@ -4,8 +4,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 112.5%;
-  
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,6 +24,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Mặc định ẩn chân trang Mobile khi trên máy tính */
+.mobile-footer-info {
+  display: none;
 }
 
 /* ==========================================
@@ -103,14 +108,14 @@ a {
 .nav-links {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem; /* Khoảng cách giữa các mục 1, 2, 3 */
+  gap: 0.8rem;
 }
 
 .nav-links a {
   color: #455660;
   font-size: 1.2rem;
-  display: block; /* Ép mỗi thẻ a chiếm trọn 1 dòng */
-  white-space: nowrap; /* Tùy chọn: Giữ nguyên dòng không bị ngắt chữ */
+  display: block;
+  white-space: nowrap;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -124,8 +129,6 @@ a {
   color: #455660;
   border-top: 2px solid #455660;
   padding-top: 1rem;
-
-  /* Đẩy phần này xuống cách xa phần Mục lục bên trên khoảng 60vh ~ 80vh */
   margin-top: 70vh; 
   margin-bottom: 2rem;
 }
@@ -166,8 +169,6 @@ a {
   position: relative;
 }
 
-/* HERO SECTION */
-
 .hero {
   min-height: 85vh;
   display: flex;
@@ -190,10 +191,8 @@ a {
   text-align: center;
   background: transparent;
   margin: auto;
-
 }
 
-/* Khung hoa văn SVG cổ điển */
 .hero-frame {
   background-image: url('frame.svg'); 
   background-repeat: no-repeat;
@@ -205,7 +204,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.04em;
   margin-top: 3.5rem;
-  margin-bottom: -0.5rem; /* Giảm margin để kéo chữ ITO.TRANG lên sát hơn */
+  margin-bottom: -0.5rem;
   line-height: 1.1;
 }
 
@@ -217,7 +216,6 @@ a {
   margin-bottom: 2rem;
 }
 
-/* SCROLL BADGE & ROTATE TEXT */
 .scroll-badge-wrapper {
   margin-top: 1rem;
   display: flex;
@@ -236,7 +234,6 @@ a {
   justify-content: center;
 }
 
-/* Kích hoạt xoay cho chữ SVG */
 .rotate-text {
   width: 100%;
   height: 100%;
@@ -257,7 +254,7 @@ a {
   font-size: 1.5rem;
   color: #455660;
   letter-spacing: 0.05em;
-  margin-top: 0 !important; /* Đẩy chữ Thank you xuống dưới sâu hơn */
+  margin-top: 0 !important;
 }
 
 @keyframes spinCircle {
@@ -265,7 +262,6 @@ a {
   100% { transform: rotate(360deg); }
 }
 
-/* SECTION HEADINGS */
 .section-heading {
   font-size: 1.5rem;
   font-weight: 550;
@@ -273,7 +269,6 @@ a {
   color: #455660;
 }
 
-/* WORKS GRID */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -320,7 +315,6 @@ a {
   font-weight: 400;
 }
 
-/* ABOUT SECTION */
 .about {
   border-top: 2px solid #455660;
   margin-top: 4rem;
@@ -360,7 +354,6 @@ a {
   margin-right: 4px;
 }
 
-/* CONTACT FOOTER */
 .footer-contact {
   border-top: 2px solid #455660;
   margin-top: 4rem;
@@ -402,7 +395,7 @@ a {
 }
 
 /* ==========================================
-   5. BUTTON & PAGE NUMBER STYLES (EXACT SAMPLE MATCH)
+   5. BUTTON & PAGE NUMBER STYLES
    ========================================== */
 .section-footer {
   position: relative;
@@ -429,61 +422,36 @@ a {
   gap: 0.6rem;
   background-color: #f9f7f3;
   color: #2b2b2b;
-  
-  /* Cố định chiều rộng để 2 nút luôn bằng nhau 100% */
   width: 300px; 
-  padding: 0.8rem 1rem; /* Giảm padding ngang lại vì đã có width cố định */
-  
+  padding: 0.8rem 1rem;
   font-family: 'Shippori Mincho', serif;
   font-size: 1.1rem;
   letter-spacing: 0.1em;
   box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.08);
   white-space: nowrap;
-
-  /* Giữ nguyên tràn lề để khối màu cam thò ra ngoài */
   overflow: visible;
-
-/* Hiệu ứng trượt mượt cho toàn bộ nút */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 2;
 }
 
-/* Thẻ cam cố định độ cao bằng nút xám */
 .studio-btn::after {
   content: "";
   position: absolute;
-  right: -30px; /* Vị trí nhô ra bên phải (chỉnh theo ý muốn) */
-  width: 50px;  /* Độ rộng cố định */
-  height: 100%; /* Chiều cao luôn bằng 100% nút chính */
-  background-color: #c86438; /* Màu cam */
+  right: -30px;
+  width: 50px;  
+  height: 100%; 
+  background-color: #c86438;
   box-shadow: -2px 4px 10px rgba(0, 0, 0, 0.2);
-
 }
 
-/* Hover mở rộng 4 chiều cho nút xám */
 .studio-btn:hover {
   background-color: #f9f7f3;
-  /* Dịch toàn bộ cụm nút (trắng + cam) sang trái 6px */
-  transform: translateX(-6px);
-
-  /* Phóng to toàn bộ nút lên 8% theo cả 4 hướng */
-  transform: scale(1.10); 
-/* Đổ bóng sâu hơn để tạo hiệu ứng nổi lên */
+  transform: scale(1.10) translateX(-6px);
   box-shadow: -6px 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Hover thẻ cam trượt ra phải */
 .studio-btn:hover::after {
-box-shadow: -4px 8px 18px rgba(0, 0, 0, 0.12);
-}
-
-.page-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  color: #555555;
-  letter-spacing: 0.2em;
-  text-align: center;
-  margin-top: 1rem;
+  box-shadow: -4px 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* ==========================================
@@ -502,7 +470,7 @@ box-shadow: -4px 8px 18px rgba(0, 0, 0, 0.12);
 
 @media (max-width: 768px) {
 
-body {
+  body {
     padding: 1.2rem 1rem;
     background-color: #455660;
   }
@@ -518,22 +486,22 @@ body {
     display: none !important;
   }
 
-.main-content {
+  .main-content {
     width: 100%;
     padding: 1.5rem 1rem;
-    border-radius: 36px 36px 12px 12px; /* Bo góc cong tròn lớn phía trên */
+    border-radius: 36px 36px 12px 12px;
     background-color: #faf8f5;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     position: relative;
     overflow: hidden;
   }
 
-.mobile-menu-btn {
+  .mobile-menu-btn {
     position: absolute;
     top: 28px;
     right: 28px;
     z-index: 10;
-    background: transparent !important; /* Xóa bỏ khung nền xám */
+    background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     cursor: pointer;
@@ -591,13 +559,13 @@ body {
 
   .overlay-vertical-name {
     writing-mode: vertical-rl;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.2em;
     color: #455660;
   }
 
   .overlay-toc h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: #455660;
   }
@@ -610,11 +578,11 @@ body {
   }
 
   .overlay-links a {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #455660;
   }
 
-.hero-card {
+  .hero-card {
     position: relative;
     width: 100%;
     min-height: 80vh;
@@ -625,11 +593,12 @@ body {
     align-items: center;
   }
 
-.hero-title {
+  .hero-title {
     font-size: 3rem;
     margin-top: 2rem;
   }
-.hero-subtitle {
+
+  .hero-subtitle {
     font-size: 1.1rem;
   }
 
@@ -641,27 +610,54 @@ body {
   .work-title {
     font-size: 0.85rem;
   }
-.back-to-top {
+
+  .back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(230, 225, 215, 0.8);
-    color: #455660;
-    border-radius: 50%; /* Tròn xoe */
+    bottom: 80px;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #c86438 !important;
+    color: #ffffff !important;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     display: flex !important;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 900;
     cursor: pointer;
-    backdrop-filter: blur(4px);
+    text-decoration: none;
+    padding: 4px 0;
   }
 
   .back-to-top .arrow {
-    font-size: 1.1rem;
-    transform: rotate(0deg);
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(90deg);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .back-to-top .txt {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Khối footer dành riêng cho Mobile */
+  .mobile-footer-info {
+    display: block !important;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    text-align: left;
   }
 }
 
@@ -670,9 +666,5 @@ body {
   .mobile-nav-overlay,
   .back-to-top {
     display: none !important;
-  }
-  /* Chỉ ẩn nút Top trên máy tính nếu bạn muốn, hoặc bỏ dòng này nếu muốn hiện cả 2 thiết bị */
-  .back-to-top {
-    display: none !important; 
   }
 }
