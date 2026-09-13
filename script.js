@@ -27,16 +27,19 @@ overlayLinks.forEach((link) => {
 });
 
 // 2. Nút Back To Top
-const backToTopBtn = document.getElementById("backToTop");
-if (backToTopBtn) {
-  backToTopBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('show', window.scrollY > 300);
+});
+
+backToTop.addEventListener('click', (event) => {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
-}
+});
 
 // 3. Hiệu ứng Scroll Reveal (Hiện mượt các phần tử)
 const observerOptions = {
