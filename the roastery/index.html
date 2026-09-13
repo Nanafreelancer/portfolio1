@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Roastery - コーヒー専門店</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- 1. Header Navigation -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <img src="assets/icons/The Roastery-logo.svg" alt="The Roastery Logo">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Menu</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#access">Access</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Menu">
+        <img src="assets/icons/hamberger-menu.svg" alt="Menu Icon">
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Hero Section -->
+    <section class="hero" id="about">
+      <div class="container hero-layout">
+        <div class="hero-image">
+          <img src="assets/images/dai-banner-sample.jpg" alt="The Roastery Hero Image">
+        </div>
+        <div class="hero-text">
+          <h1>The Roastery コーヒー専門店</h1>
+          <p>世界一番美味しいコーヒー豆を集めてる専門店です。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Popular Products Section (人気商品一覧) -->
+    <section class="products" id="products">
+      <div class="container">
+        <h2>人気商品一覧</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/images/ninkimenu1-sample.jpg" alt="イタリアコーヒードリップ">
+            <h3>イタリアコーヒードリップ15個</h3>
+            <p class="price">2500円 (税込)</p>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/images/ninkimenu2-sample.jpg" alt="イタリアコーヒードリップ">
+            <h3>イタリアコーヒードリップ15個</h3>
+            <p class="price">2500円 (税込)</p>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/images/ninkimenu3-sample.jpg" alt="イタリアコーヒードリップ">
+            <h3>イタリアコーヒードリップ15個</h3>
+            <p class="price">2500円 (税込)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- 4. Menu Section (店内メニュー) - BỔ SUNG -->
+    <section class="menu-section" id="menu">
+      <div class="container menu-layout">
+        <div class="menu-content">
+          <h2>店内メニュー</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-name">エスプレッソ (Espresso)</span>
+              <span class="menu-price">500円</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-name">カフェラテ (Caffè Latte)</span>
+              <span class="menu-price">650円</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-name">ドリップコーヒー (Drip Coffee)</span>
+              <span class="menu-price">600円</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-image-wrap">
+          <img src="assets/images/menu.jpg" alt="店内メニューイメージ">
+        </div>
+      </div>
+    </section>
+<!-- 5. FAQ Section (よくある質問) - BỔ SUNG -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <h2>FAQ よくある質問</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>駐車場はありますか？</summary>
+            <p>はい、店舗裏に3台分の専用駐車場がございます。</p>
+          </details>
+          <details class="faq-item">
+            <summary>テイクアウトは可能ですか？</summary>
+            <p>全メニューテイクアウト可能です。</p>
+          </details>
+          <details class="faq-item">
+            <summary>営業時間を教えてください。</summary>
+            <p>10:00 〜 19:00（定休日：水曜日）となります。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+        <!-- 6. Contact Form (お問い合わせ) -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">名前</label>
+            <input type="text" id="name" placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" rows="5" placeholder="お問い合わせ内容をご入力ください"></textarea>
+          </div>
+          <button type="submit" class="submit-btn" aria-label="送信">
+            <img src="assets/icons/soshin-button.svg" alt="送信">
+          </button>
+        </form>
+      </div>
+    </section>
+
+ <!-- 7. Access Section (アクセス) - BỔ SUNG -->
+    <section class="access-section" id="access">
+      <div class="container access-container">
+        <div class="access-info">
+          <h2>アクセス</h2>
+          <p><strong>住所:</strong> 東京都渋谷区神宮前 1-2-3</p>
+          <p><strong>営業時間:</strong> 10:00 - 19:00</p>
+          <p><strong>最寄駅:</strong> 原宿駅 徒歩5分</p>
+        </div>
+        <div class="access-map">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.0203877647555!2d139.4264105!3d35.5778886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018fdb9dae99ccf%3A0x11785cc58796454f!2sCONZEN%20COFFEE!5e0!3m2!1sja!2sjp!4v1789266662470!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- 8. Footer Section -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <a href="#top" class="footer-logo" aria-label="The Roastery ホーム">
+        <img src="assets/icons/The Roastery-logo.svg" alt="The Roastery Logo">
+      </a>
+      <div class="social-links">
+        <a href="https://www.facebook.com/" class="social-link social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+        <a href="https://www.linkedin.com/" class="social-link social-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+        <a href="https://www.youtube.com/" class="social-link social-youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+        <a href="https://www.instagram.com/" class="social-link social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+      </div>
+      <a href="#top" class="top-button" aria-label="ページの先頭へ戻る">
+        <img src="assets/icons/top-button.svg" alt="Top">
+      </a>
+      <p class="copyright">&copy; The Roastery All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
