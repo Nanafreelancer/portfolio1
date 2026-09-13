@@ -1,216 +1,191 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITO.TRANG｜Portfolio</title>
-    <!-- CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Roastery - コーヒー専門店</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
-<div class="book-container">
+  <!-- 1. Header Navigation -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <img src="assets/icons/The Roastery-logo.svg" alt="The Roastery Logo">
+      </a>
 
-<img src="images/decorative-line.png" alt="Decorative Line" class="decorative-line">
-
-<!-- CỘT TRÁI (Sticky Sidebar - Mục lục) -->
-<aside class="sidebar-left">
-  <div class="sidebar-sticky-inner">
-      <div class="sidebar-top">
-         <div class="vertical-name">ITO.TRANG</div>
-         <div class="toc-wrapper">
-           <h2 class="toc-title">目次</h2>
-           <nav class="nav-links">
-              <a href="#works">1. 作ったもの</a>
-              <a href="#about">2. プロフィール</a>
-              <a href="#contact">3. お問い合わせ</a>
-           </nav>
-         </div>
-      </div>
-
-      <div class="sidebar-bottom">
-         <p class="colophon-title">ITO.TRANG portfolio</p>
-         <ul class="colophon-list">
-            <li><span>目次</span></li>
-            <li><span>［作ったもの］</span></li>
-            <li><span>［プロフィール］</span></li>
-            <li><span>［お問い合わせ］</span></li>
-            <li><span>著者</span>伊藤チャン</li>
-            <li><span>発行日</span>2026年</li>
-         </ul>
-         <p class="copyright">&copy; 2026 ITO.TRANG All rights reserved</p>
-      </div>
-  </div>
-</aside>
-
-<!-- CỘT PHẢI (Nội dung chính cuộn dọc) -->
-<main class="main-content">
-      <section class="hero">
-         <div class="hero-card hero-frame">
-            <!-- ĐÃ CHUYỂN HAMBURGER MENU VÀO ĐÂY ĐỂ NẰM TRONG KHUNG SVG -->
-            <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </button>
-
-            <h1 class="hero-title">Portfolio</h1>
-            <p class="hero-subtitle">ITO.TRANG</p>
-
-            <!-- Cụm Badge SCROLL DOWN & Mũi tên -->
-            <div class="scroll-badge-wrapper">
-                <div class="scroll-rotate-badge">
-                    <!-- SVG Đường tròn chữ xoay -->
-                    <svg viewBox="0 0 100 100" class="rotate-text">
-                        <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                        <text font-size="20" fill="#a86e59" letter-spacing="2.5" font-family="'Cormorant Garamond', serif">
-                            <textPath href="#circlePath">SCROLL DOWN  SCROLL DOWN  </textPath>
-                        </text>
-                    </svg>
-
-                    <!-- Mũi tên chỉ xuống ở tâm -->
-                    <div class="center-arrow">
-                        <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="#a86e59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="8" y1="2" x2="8" y2="22"></line>
-                            <polyline points="2 16 8 22 14 16"></polyline>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Dòng chữ phụ phía dưới -->
-                <p class="thank-you-text"><b>Thank you for visiting</b></p>
-            </div>
-         </div>
-      </section>             
-
-      <!-- 1.work section -->
-      <section id="works" class="works">
-        <h2 class="section-heading">1. 作ったもの</h2>
-        <div class="works-grid">
-         
-            <!-- works1 -->
-             <article class="work-item">
-               <a href="the roastery/index.html" class="work-link">
-                 <div class="work-img-wrapper">
-                  <img src="images/dai-banner2.jpg" alt="コーヒー店のランディングページ" class="work-image">
-                 </div>
-                  <h3 class="work-title">コーヒー店のランディングページ</h3>
-                  <span class="work-badge">サイト</span>
-               </a>
-             </article>
-            <!-- works2 -->
-             <article class="work-item">
-               <a href="#" class="work-link">
-                 <div class="work-img-wrapper">
-                  <img src="images/imgi_30_s-2880x1630_v-frms_webp_4ebb9d10-7d20-45bd-a2dd-5982a1da8348_small.jpeg" alt="デモプロジェクト2" class="work-image">
-                 </div>
-                  <h3 class="work-title">デモプロジェクト2</h3>
-                  <span class="work-badge">サイト</span>
-               </a>
-             </article>
-            <!-- works3 -->
-             <article class="work-item">
-               <a href="https://raw.githubusercontent.com/Nanafreelancer/portfolio1/main/images/banner1.jpg" class="work-link">
-                 <div class="work-img-wrapper">
-                  <img src="images/banner1.jpg" alt="クリアランスセールバナー" class="work-image">
-                 </div>
-                  <h3 class="work-title">クリアランスセールバナー</h3>
-                  <span class="work-badge">バナー</span>
-               </a>
-             </article>
-            <!-- works4 -->
-             <article class="work-item">
-               <a href="https://raw.githubusercontent.com/Nanafreelancer/portfolio1/main/images/banner2.jpg" class="work-link">
-                 <div class="work-img-wrapper">
-                  <img src="images/banner2.jpg" alt="ブランド紹介バナー" class="work-image">
-                 </div>
-                  <h3 class="work-title">ブランド紹介バナー</h3>
-                  <span class="work-badge">バナー</span>
-               </a>
-             </article>
-        </div>
-
-        <div class="section-footer">
-          <div class="studio-btn-wrapper">
-            <a href="#" class="studio-btn">作品一覧へ <span>→</span></a>
-          </div>
-          <div class="page-number">− 1 −</div>
-        </div>
-       </section>
-
-       <!-- about me -->
-        <section id="about" class="about">
-            <h2 class="section-heading">2. プロフィール</h2>
-            <div class="profile-card">
-               <img src="images/avatar.jpeg" alt="avatar" class="profile-avatar">
-               <div class="profile-info">
-                  <h3>ITO CHAN</h3>
-                  <p class="about-text">こんにちは。初めまして伊藤チャンです。</p>
-                  <div class="skills">
-                     <strong>スキル：</strong>
-                     <span>HTML/CSS</span>
-                     <span>JavaScript</span>
-                     <span>Photoshop</span>
-                     <span>Illustrator</span>
-                  </div>
-               </div>
-            </div>
-
-            <div class="section-footer">
-              <div class="studio-btn-wrapper">
-                <a href="#" class="studio-btn">プロフィールを見る <span>→</span></a>
-              </div>
-              <div class="page-number">− 2 −</div>
-            </div>
-        </section>
-
-        <!-- contact -->
-        <footer id="contact" class="footer-contact">
-         <h2 class="section-heading">3. お問い合わせ</h2>
-         <div class="contact-box">
-            <img src="images/contact.webp" alt="CONTACT" class="contact-bg-img">
-            <div class="contact-content">
-              <p class="contact-text">下記アドレスへメールにてご連絡ください。</p>
-              <a href="mailto:nanachan@gmail.com" class="email-btn">nanachan@gmail.com</a> 
-            </div>
-         </div>
-        </footer>
- <!-- KHỐI THÔNG TIN BẢN QUYỀN CHỈ HIỆN TRÊN MOBILE -->
-      <div class="mobile-footer-info">
-        <hr class="footer-divider">
-        <p class="colophon-title">ITO.TRANG Portfolio</p>
-        <ul class="colophon-list">
-           <li><span>目次</span> <span>［プロフィール］ ［作ったもの］</span></li>
-           <li><span>著者</span>伊藤チャン</li>
-           <li><span>発行日</span>2026年</li>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Menu</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#access">Access</a></li>
         </ul>
-        <p class="copyright">&copy; 2026 ITO.TRANG All rights reserved</p>
-      </div>       
-</main>
-</div>
+      </nav>
 
-<!-- Mobile Navigation Overlay -->
-<div class="mobile-nav-overlay" id="navOverlay">
-  <button class="close-menu-btn" id="menuClose">&times;</button>
-  <div class="overlay-content">
-    <div class="overlay-vertical-name">ITO TRANG</div>
-    <div class="overlay-toc">
-      <h2>目次</h2>
-      <ul class="overlay-links">
-        <li><a href="#works" class="overlay-link">1. 作ったもの</a></li>
-        <li><a href="#about" class="overlay-link">2. プロフィール</a></li>
-        <li><a href="#contact" class="overlay-link">3. お問い合わせ</a></li>
-      </ul>
+      <button class="menu-toggle" aria-label="Menu">
+        <img src="assets/icons/hamberger-menu.svg" alt="Menu Icon">
+      </button>
     </div>
-  </div>
-</div>
+  </header>
 
-<a href="#" class="back-to-top" id="backToTop">
-  <span class="arrow">«</span>
-  <span class="txt">TOP</span>
-</a>
+  <main>
+    <!-- 2. Hero Section -->
+    <section class="hero" id="about">
+      <div class="container hero-layout">
+        <div class="hero-image">
+          <img src="assets/images/dai-banner.jpg" alt="The Roastery Hero Image">
+        </div>
+        <div class="hero-text">
+          <h1>The Roastery コーヒー専門店</h1>
+          <p>世界一番美味しいコーヒー豆を集めてる専門店です。</p>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- 3. Popular Products Section (人気商品一覧) -->
+    <section class="products" id="products">
+      <div class="container">
+        <h2>人気商品一覧</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/images/ninkimenu.jfif" alt="イタリアコーヒードリップ">
+            <h3>イタリアコーヒードリップ15個</h3>
+            <p class="price">2500円 (税込)</p>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/images/ninkimenu2.jfif" alt="イタリアコーヒードリップ">
+            <h3>イタリアコーヒードリップ15個</h3>
+            <p class="price">2500円 (税込)</p>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/images/ninkimenu3.jfif" alt="イタリアコーヒードリップ">
+            <h3>イタリアコーヒードリップ15個</h3>
+            <p class="price">2500円 (税込)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- 4. Menu Section (店内メニュー) - BỔ SUNG -->
+    <section class="menu-section" id="menu">
+      <div class="container menu-layout">
+        <div class="menu-content">
+          <h2>店内メニュー</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-name">エスプレッソ (Espresso)</span>
+              <span class="menu-price">500円</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-name">カフェラテ (Caffè Latte)</span>
+              <span class="menu-price">650円</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-name">ドリップコーヒー (Drip Coffee)</span>
+              <span class="menu-price">600円</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-image-wrap">
+          <img src="assets/images/menu.jpg" alt="店内メニューイメージ">
+        </div>
+      </div>
+    </section>
+<!-- 5. FAQ Section (よくある質問) - BỔ SUNG -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <h2>FAQ よくある質問</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>駐車場はありますか？</summary>
+            <p>はい、店舗裏に3台分の専用駐車場がございます。</p>
+          </details>
+          <details class="faq-item">
+            <summary>テイクアウトは可能ですか？</summary>
+            <p>全メニューテイクアウト可能です。</p>
+          </details>
+          <details class="faq-item">
+            <summary>営業時間を教えてください。</summary>
+            <p>10:00 〜 19:00（定休日：水曜日）となります。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+        <!-- 6. Contact Form (お問い合わせ) -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">名前</label>
+            <input type="text" id="name" placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" rows="5" placeholder="お問い合わせ内容をご入力ください"></textarea>
+          </div>
+          <button type="submit" class="submit-btn" aria-label="送信">
+            <img src="assets/icons/soshin-button.svg" alt="送信">
+          </button>
+        </form>
+      </div>
+    </section>
+
+ <!-- 7. Access Section (アクセス) - BỔ SUNG -->
+    <section class="access-section" id="access">
+      <div class="container access-container">
+        <div class="access-info">
+          <h2>アクセス</h2>
+          <p><strong>住所:</strong> 東京都渋谷区神宮前 1-2-3</p>
+          <p><strong>営業時間:</strong> 10:00 - 19:00</p>
+          <p><strong>最寄駅:</strong> 原宿駅 徒歩5分</p>
+        </div>
+        <div class="access-map">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.0203877647555!2d139.4264105!3d35.5778886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018fdb9dae99ccf%3A0x11785cc58796454f!2sCONZEN%20COFFEE!5e0!3m2!1sja!2sjp!4v1789266662470!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- 8. Footer Section -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <a href="#top" class="footer-logo" aria-label="The Roastery ホーム">
+        <img src="assets/icons/The Roastery-logo.svg" alt="The Roastery Logo">
+      </a>
+      <div class="social-links">
+        <a href="https://www.facebook.com/" class="social-link social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+        <a href="https://www.linkedin.com/" class="social-link social-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+        <a href="https://www.youtube.com/" class="social-link social-youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+        <a href="https://www.instagram.com/" class="social-link social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="assets/icons/social-icons.svg" alt="">
+        </a>
+      </div>
+      <a href="#top" class="top-button" aria-label="ページの先頭へ戻る">
+        <img src="assets/icons/top-button.svg" alt="Top">
+      </a>
+      <p class="copyright">&copy; The Roastery All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="javascript.js"></script>
 </body>
 </html>
